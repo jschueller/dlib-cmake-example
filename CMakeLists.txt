@@ -11,8 +11,8 @@ message (STATUS "Found dlib: ${dlib_DIR} (found version ${dlib_VERSION})")
 add_executable(optim_ex optimization_ex.cpp)
 target_link_libraries(optim_ex PRIVATE dlib::dlib)
 
-find_package(LAPACK REQUIRED)
-target_link_libraries(optim_ex PRIVATE ${LAPACK_LIBRARIES})
+#find_package(LAPACK REQUIRED)
+#target_link_libraries(optim_ex PRIVATE ${LAPACK_LIBRARIES})
 
 add_library(foo foo.cpp)
 target_link_libraries(foo PRIVATE dlib::dlib)
