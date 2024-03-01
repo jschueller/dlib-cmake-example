@@ -19,5 +19,5 @@ jobs:
     #- run: diff -ur /usr/local/Cellar/dlib/19.24.2/lib/cmake/dlib/dlib.cmake /tmp/install/lib/cmake/dlib/dlib.cmake
     #- run: sed -i .bak "s|/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include||g" /usr/local/Cellar/dlib/19.24.2/lib/cmake/dlib/dlib.cmake
     - run: |
-        cmake -B build .
+        cmake -B build -DCMAKE_VERBOSE_MAKEFILE=ON .
         cmake --build build
