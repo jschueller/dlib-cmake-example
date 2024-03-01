@@ -21,3 +21,16 @@ jobs:
     - run: |
         cmake -B build -DCMAKE_VERBOSE_MAKEFILE=ON .
         cmake --build build
+
+  macos2:
+    runs-on: macos-latest
+    env:
+      LDFLAGS: -L/usr/local/opt/openblas/lib
+      CPPFLAGS: -I/usr/local/opt/openblas/include
+    steps:
+    - uses: actions/checkout@v4
+    - run: brew install dlib
+    - run: sed -i .bak "s|/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include||g" /usr/local/Cellar/dlib/19.24.2/lib/cmake/dlib/dlib.cmake
+    - run: |
+        cmake -B build -DCMAKE_VERBOSE_MAKEFILE=ON .
+        cmake --build build
