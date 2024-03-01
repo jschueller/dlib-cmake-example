@@ -9,6 +9,10 @@ jobs:
       CPPFLAGS: -I/usr/local/opt/openblas/include
     steps:
     - uses: actions/checkout@v4
+    - run: brew remove go@1.20 openssl@1.1 packer
+    - run: brew untap homebrew/cask
+    - run: brew untap homebrew/core
+    - run: brew cleanup
     - run: brew config
     - run: brew doctor
     - run: brew update
