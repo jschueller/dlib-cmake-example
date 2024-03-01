@@ -9,6 +9,9 @@ jobs:
       CPPFLAGS: -I/usr/local/opt/openblas/include
     steps:
     - uses: actions/checkout@v4
+    - run: brew config
+    - run: brew doctor
+    - run: brew update
     - run: brew install dlib
     - run: cat /usr/local/Cellar/dlib/19.24.2/lib/cmake/dlib/dlib.cmake
     #- run: |
