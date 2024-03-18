@@ -37,7 +37,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: brew update
-    - run: brew remove python@3.12 aws-sam-cli pipx
+    - run: brew remove python@3.12 aws-sam-cli pipx python@3.11 azure-cli
     - run: brew install dlib --force
     #- run: brew upgrade
     #- run: sed -i .bak "s|/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include||g" /usr/local/Cellar/dlib/19.24.2/lib/cmake/dlib/dlib.cmake
